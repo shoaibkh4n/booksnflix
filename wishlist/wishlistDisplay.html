@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en" class="MnVnmUYHKKPU">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="../css/morewrap.css">
+  <script data-ad-client="ca-pub-3768030798794845" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w=="
+    crossorigin="anonymous" />
+  <meta name="description"
+    content="A platform for all books and movies lover, where you get all the movies based on book and vice versa. You can buy the book and watch the particular movie related to that book on any OTT platform. You also add the book and movie to wishlist.">
+  <title>Wishlist - Booksnflix</title>
+</head>
+<style>
+  .loader {
+    display: flex;
+    opacity: 1;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin-top: 90px;
+    padding: 1em;
+    visibility: visible;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .loader-wrapper {
+    width: 17%;
+    min-width: 50px;
+    text-align: center;
+    max-width: 70px;
+  }
+
+  .options {
+    display: none;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .options button {
+    border: none;
+    padding: 5px 20px;
+    outline: none;
+    background-color: #d7d7d742;
+    color: white;
+    border-radius: 5px;
+    font-size: 23px;
+    cursor: pointer;
+  }
+
+  .options button:hover {
+    opacity: 0.8;
+    transition: 0.35s ease;
+  }
+
+  .options .btn-active-list {
+    background-color: #efff0ebd;
+  }
+
+  .options .book-items {
+    margin-left: 40px;
+    /* background-color: #f7f7f72c; */
+  }
+
+  @media(max-width:810px) {
+    .loader {
+      height: 0px;
+    }
+
+    .options {
+      margin: 15px 0px;
+    }
+
+    .options button {
+      font-size: 17px;
+      padding: 3px 15px;
+    }
+
+    .options button:hover {
+      opacity: 1;
+    }
+
+    .options .book-items {
+      margin-left: 13px;
+    }
+  }
+</style>
+
+<body>
+  <!--header Start-->
+  <header class="primary-header">
+
+    <!--Navigation Bar-->
+    <nav class="navbar">
+
+      <!-- logo -->
+      <a href="/"><img src="/images/logo.png" alt="logo" class="logo"></img></a>
+      <ul class="list-item">
+        <li class="cool-underline"><a href="/" class="font-color">Home</a></li>
+        <li class="cool-underline"><a href="/" class="font-color">Movies</a></li>
+        <li class="cool-underline"><a href="/books/booksmain.html" class="font-color">Books</a></li>
+        <li class="cool-underline"><a href="../Platform/platform.html" class="font-color">OTT</a></li>
+        <li class="cool-underline"><a href="/feedback/FeedBack.html" class="font-color">Feedback</a></li>
+
+        <!-- Search Bar -->
+
+        <li class="search-bar">
+          <form action="/" class="search-bar-fix" method="GET" id="form">
+            <input autocomplete="off" id="myinput" name="search" type="text" class="search-input"
+              placeholder="Search..." />
+            <label for="search-input"></label>
+            <button type="submit" class="search-btn" role="button" aria-label="Search Button">
+              <i class="fa fa-search " aria-hidden="true"></i>
+            </button>
+          </form>
+        </li>
+        <!-- Search bar End  -->
+
+        <!-- User Profile And Registraion  -->
+
+        <!-- <li class="signin-btn"><a href="#"><i class="far fa-user" aria-hidden="true"></i>&nbsp&nbspRegister / Sign In</a></li>
+            
+      
+            <li class="user"><div class="user-profile"><i class="far fa-user" aria-hidden="true"><span class="wrap">&nbsp&nbspNAME(Check for the ellipses)</span></i>
+            <div class="details">
+              <ul class="user-info">
+                <li class="invisible"></li>
+                <li class="user-content before-element"><a href="/"><i class="fa fa-user" aria-hidden="true"></i>&nbsp&nbsp<span class="profile-text-in-popup">Profile</span></a></li>
+
+                <hr class="horizontal-line">
+                <li class="wishlist-btn before-element"><a href="/"><i class="fas fa-bookmark"></i>&nbsp&nbsp&nbspWishlist</a></li>
+
+                <hr class="horizontal-line">
+                <li class="signout-btn before-element"><a href="/"><i class="fa fa-power-off" aria-hidden="true"></i>&nbsp&nbspSign out</a></li>
+              </ul>
+            </div>
+          </div>
+          </li> -->
+
+        <!-- Profile and registraion end  -->
+
+      </ul>
+
+    </nav>
+
+    <!-- Navbar End  -->
+
+  </header>
+  <!--Header End-->
+  <div class="search-using-microphone">
+    <button class="close"><i class="fas fa-times"></i></button>
+    <div class="microphone-icon">
+      <img src="../images/microphone.png" alt="microphone tags">
+    </div>
+  </div>
+
+  <section class="cards-section">
+
+    <div class="individual-categ">
+      <div class="catg-name" style="flex-direction: column; align-items: flex-start;">
+        <h1 class="card-heading" ">Your Wishlist:</h1>
+        <div class=" options">
+          <button class=" btn-active-list movie-items">Movies</button>
+          <button class=" book-items">Books</button>
+      </div>
+      <p class="search-results-numbers" style="color:rgba(202, 203, 204, 0.932); font-size: 14px;"></p>
+      <div style="display: none;" class="no-result"></div>
+    </div>
+    <div class="all-cards movies-wishlist">
+      <ul class="card-ul searchresults">
+      </ul>
+    </div>
+    <div style="display: none;" class="all-cards books-wishlist">
+      <ul class="card-ul books-wishlist-display ">
+      </ul>
+    </div>
+  </section>
+
+
+  <!-- footer  -->
+  <footer class="footer">
+    <h1 class="footer-discription">Booksnflix is all about fantasies.</h1>
+
+    <div class="social-media">
+
+      <p class="footer-followus">FOLLOW US ON: </p>
+
+      <ul class="social-icons">
+
+        <li class="social-links">
+          <a href="/" class="facebook social-li">
+            <i class="fab fa-facebook-square transparent-container" role="link"
+              aria-labelledby="A facebook icon to redirect to facebook">
+            </i><span class="social-text">Facebook</span>
+          </a>
+        </li>
+
+        <li class="social-links"><a href="/" class="twitter social-li"><i class="fab fa-twitter" role="link"
+              aria-labelledby="A Twitter icon to redirect to twitter"></i><span class="social-text">Twitter</span></a>
+        </li>
+        <li class="social-links"><a href="/" class="linkdin social-li"><i class="fab fa-linkedin" role="link"
+              aria-labelledby="A Linkdin icon to redirect to Linkdin"></i><span class="social-text">Linkdin</span></a>
+        </li>
+        <li class="social-links"><a href="/" class="instagram social-li"><i class="fab fa-instagram" role="link"
+              aria-labelledby="Instagram"></i><span class="social-text">Instagram</span></a></li>
+      </ul>
+    </div>
+    <p class="copyright">
+      Copyright &copy2023, Booknflix, Inc.
+    </p>
+  </footer>
+  <!-- footer End  -->
+
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.4.1/firebase-database.js"></script>
+  <script src="../Search/searchInputValue.js"></script>
+  <script type="module" src="wishlistDisplay.js"></script>
+</body>
+
+</html>
